@@ -8,7 +8,7 @@ This is a shell script to auto setup your (updated version) python package onto 
 - Copy the `setup_new_pypi.sh` file into your python package's root folder (where the `setup.py` exists). 
 
 - Run `setup_new_pypi.sh` under your python package's root folder in terminal: 
-  - `$ ./setup_new_pypi.sh your-package-name`
+  - $ `./setup_new_pypi.sh your-package-name`
 
 - Then you'll be asked to input the new version number to continue. 
 
