@@ -76,7 +76,7 @@ while true; do
     read -p 'Use Test PyPi? [Y/n]: ' check_test
     case $check_test in
 	[Yy]* ) twine upload --repository-url https://test.pypi.org/legacy/ dist/*; break;;
-	[Nn]* ) twine upload --repository-url https://pypi.org/legacy/ dist/*; break;;
+	[Nn]* ) twine upload --repository-url https://upload.pypi.org/legacy/ dist/*; break;;
 	* ) echo "Please answer yes or no.";;
     esac
 done
