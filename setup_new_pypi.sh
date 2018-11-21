@@ -72,4 +72,11 @@ python3 setup.py sdist bdist_wheel
 python3 -m pip install --user --upgrade twine
 echo """
 """
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+while true; do
+    read -p 'Use Test PyPi? [Y/n]: ' check_test
+    case $check_test in
+	[Yy]* ) twine upload --repository-url https://test.pypi.org/legacy/ dist/*; break;;
+	[Nn]* ) twine upload --repository-url https://pypi.org/legacy/ dist/*; break;;
+	* ) echo "Please answer yes or no.";;
+    esac
+done
