@@ -19,4 +19,5 @@ Usage
 - Then you'll be asked to input the new version number to continue. 
 
 - Then you'll be asked to input the username and passcode of PyPi as usual. 
-  - Here you'll also be asked to choose whether to use Test PyPi or the real PyPi.
+  
+  - Here you'll also be asked to choose whether to use Test PyPi or the real PyPi. 
