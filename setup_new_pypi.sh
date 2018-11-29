@@ -67,9 +67,19 @@ python3 -m pip install --user --upgrade setuptools wheel
 echo """
 """
 python3 setup.py sdist bdist_wheel
+#python3 setup.py sdist bdist_wheel --long-description | rst2html.py --no-raw > output.html
+echo """
+"""
 
 ## Upload
 python3 -m pip install --user --upgrade twine
+
+echo """
+
+Checking on the sdist and wheel ... (also check README rendering problem)
+"""
+twine check dist/*
+
 echo """
 """
 while true; do
