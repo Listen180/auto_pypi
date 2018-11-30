@@ -42,8 +42,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         #"License :: OSI Approved :: MIT License",
         "License :: OSI Approved :: BSD License",
-        "Operating System :: MacOS",
-        "Operating System :: Linux",
+        "Operating System :: OS Independent",
     ],
     keywords='python package pypi shell',
 )
