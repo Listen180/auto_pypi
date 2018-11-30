@@ -15,7 +15,9 @@ import os
 import click
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
 
+print(HERE)
 
 @click.command()
 @click.option(
@@ -46,11 +48,12 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     \t $ autopypi your-package-root-directory -n package_name -v package_version -r
     \t 
     """
+    click.echo('')
+    click.echo(' Preparing package {} (v{}) ... '.format(pkg_name, pkg_version))
+    click.echo('')
 
     if real_pypi:
-        click.echo("! Using REAL PyPi index ! ")
+        click.echo("    ! Using REAL PyPi index ! ")
     else:
-        click.echo("! Using TEST PyPi index ! ")
+        click.echo("    ! Using TEST PyPi index ! ")
 
-    click.echo('')
-    click.echo('Package {}.v{} uploaded. '.format(pkg_name, pkg_version))
