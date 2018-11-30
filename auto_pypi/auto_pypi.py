@@ -25,15 +25,25 @@ import click
     help="Set to use the real PyPi index. ",
     required=False,
 )
+@click.option(
+    'pkg_name', '--name', '-n',
+    help="Set the package name. ",
+    required=True,
+)
+@click.option(
+    'pkg_version', '--version', '-v',
+    help="Set the package version number. ",
+    required=True,
+)
 @click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
-@click.argument('pkg_name', nargs=1, type=click.STRING, required=True)
-def main(real_pypi, pkg_dir, pkg_name):
+#@click.argument('pkg_name', nargs=1, type=click.STRING, required=True)
+def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     """
     Python command line tool to setup Python package automatically. 
     \b
     Example:
     \b
-    \t $ autopypi -r your-package-root-directory
+    \t $ autopypi your-package-root-directory -n package_name -v package_version -r
     \t 
     """
 
@@ -43,4 +53,4 @@ def main(real_pypi, pkg_dir, pkg_name):
         click.echo("! Using TEST PyPi index ! ")
 
     click.echo('')
-    click.echo('Package {} uploaded. '.format(pkg_name))
+    click.echo('Package {}.v{} uploaded. '.format(pkg_name, pkg_version))
