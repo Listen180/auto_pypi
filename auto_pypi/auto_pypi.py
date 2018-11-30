@@ -50,33 +50,22 @@ def hello(count, name):
     help="Set to use the real PyPi index. ",
     required=False,
 )
-@click.argument('text', nargs=-1, type=click.STRING, required=True)
-def main(from_lang, to_lang, provider, secret_access_key, output_only, text):
+@click.argument('pkg_dir', nargs=-1, type=click.STRING, required=True)
+@click.argument('pkg_name', nargs=-1, type=click.STRING, required=True)
+def main(real_pypi, pkg_dir, pkg_name):
     """
     Python command line tool to setup Python package automatically. 
     \b
     Example:
     \b
-    \t $ autopypi -r 
+    \t $ autopypi -r your-package-root-directory
     \t 
     """
-    text = ' '.join(text)
-
-    kwargs = dict(from_lang=from_lang, to_lang=to_lang, provider=provider)
-    if provider != DEFAULT_PROVIDER:
-        kwargs['secret_access_key'] = secret_access_key
-
-    translator = Translator(**kwargs)
-    translation = translator.translate(text)
-    if sys.version_info.major == 2:
-        translation = translation.encode(locale.getpreferredencoding())
 
     if real_pypi:
-        click.echo("! Using R-E-A-L PyPi index ! ")
+        click.echo("! Using REAL PyPi index ! ")
     else:
         click.echo("! Using TEST PyPi index ! ")
 
-
-    click.echo('\nTranslation: {}'.format(translation))
-    click.echo('-' * 25)
-    click.echo('Translated by: {}'.format(translator.provider.name))
+    click.echo('')
+    click.echo('Package {} uploaded. '.format(pkg_name))
