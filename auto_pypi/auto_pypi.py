@@ -25,8 +25,8 @@ import click
     help="Set to use the real PyPi index. ",
     required=False,
 )
-@click.argument('pkg_dir', nargs=-1, type=click.STRING, required=True)
-@click.argument('pkg_name', nargs=-1, type=click.STRING, required=True)
+@click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
+@click.argument('pkg_name', nargs=1, type=click.STRING, required=True)
 def main(real_pypi, pkg_dir, pkg_name):
     """
     Python command line tool to setup Python package automatically. 
