@@ -45,6 +45,6 @@ setuptools.setup(
     ],
     keywords='python package pypi shell',
     entry_points={'console_scripts': [
-        'autopypi = auto_pypi.auto_pypi:main'
+        'autopypi = auto_pypi.auto_pypi:main',
         ]},
 )
