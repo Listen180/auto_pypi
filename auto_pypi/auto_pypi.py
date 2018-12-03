@@ -14,6 +14,8 @@ import sys
 import os
 import click
 import subprocess
+import shlex
+
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -57,16 +59,24 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     \t 
     """
     if real_pypi:
+        click.echo("")
         click.echo("! Using REAL PyPi index ! ")
     else:
+        click.echo("")
         click.echo("! Using TEST PyPi index ! ")
 
-    click.echo('')
     click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
-    click.echo('')
+    click.echo("")
 
     if real_pypi:
-        subprocess.Popen(["bash", "./upload_to_pypi.sh"])
+        command_script = "ls -l -a"
+        process = subprocess.Popen(command_script, shell=True, stdout=subprocess.PIPE)
+        process.wait()
+        print(command_script)
+        print(process.returncode)
+
+        command_script = HERE + '/setup_new_pypi.sh' + ' ' + pkg_name
+        subprocess.call(shlex.split(command_script))
         #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
     else:
         subprocess.Popen(["bash", "./setup_new_pypi.sh"])
