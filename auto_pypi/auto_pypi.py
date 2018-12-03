@@ -46,7 +46,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     required=True, 
     default='./',
 )
-def main(pkg_dir=, pkg_name, pkg_version, real_pypi):
+def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     """
     Python command line tool to setup Python package automatically. 
     \b
