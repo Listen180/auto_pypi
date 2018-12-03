@@ -21,39 +21,32 @@ Usage
 
   .. code-block:: shell
 
-   $ autopypi your-package-dir -n package-name -v package-version 
-   $ autopypi your-package-dir -n package-name -v package-version -r
+     Usage: autopypi [OPTIONS] PKG_DIR
+
+       Python command line tool to setup Python package automatically.  
+       Example:      $ autopypi your-package-root-directory -n package_name -v package_version -r
+
+     Options:
+       -n, --name TEXT     Specify the package name.   [required]
+       -v, --version TEXT  Specify the package version number.   [required]
+       -r, --real          Use the real PyPi index (instead of test PyPi).
+       --help              Show this message and exit.
+
 
 
 - Then you'll be asked to input the username and passcode of PyPi / Test-PyPi as usual. 
 
 
-Usage
-*****
-.. code-block:: shell
-
-   Usage: autopypi [OPTIONS] PKG_DIR
-
-     Python command line tool to setup Python package automatically.  
-     Example:      $ autopypi your-package-root-directory -n package_name -v
-     package_version -r
-
-   Options:
-     -n, --name TEXT     Specify the package name.   [required]
-     -v, --version TEXT  Specify the package version number.   [required]
-     -r, --real          Use the real PyPi index (instead of test PyPi).
-     --help              Show this message and exit.
 
 
 
+|
+
+|
 
 
 
-
-
-
-
-
+-----------------------------------
 
 |Sen LEI Website| |Sen LEI Github|
 
