@@ -42,7 +42,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 @click.argument(
     'pkg_dir', 
     nargs=1, 
-    type=click.Path(exists=True, file_okey=False, writable=True), 
+    type=click.Path(exists=True, file_okay=False, writable=True), 
     required=True, 
     default='./',
 )
