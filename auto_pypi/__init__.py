@@ -48,7 +48,7 @@ class avatar(object):
                        All Rights Reserved
                 '''
         print(info_org)
-        time.sleep(2)
+        time.sleep(1)
 
     def type_2(self):
         info = '''
@@ -63,7 +63,7 @@ class avatar(object):
                        All Rights Reserved
                 '''
         print(info)
-        time.sleep(2)
+        time.sleep(1)
 
     def type_3(self):
         info = '''
@@ -78,7 +78,7 @@ class avatar(object):
                        All Rights Reserved
                 '''
         print(info)
-        time.sleep(2)
+        time.sleep(1)
 
 
 avatar()
