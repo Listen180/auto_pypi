@@ -17,18 +17,16 @@ Usage
 -----
 
 
-- Just run ``autopypi`` in terminal, *providing your package's location, name, and new version number* :
+- Just run ``autopypi`` in terminal, *providing your package's location* (current directory by default) and new version number later: 
 
 .. code-block:: shell
 
    Usage: autopypi [OPTIONS] PKG_DIR
 
      Python command line tool to setup Python package automatically.  
-     Example:      $ autopypi your-package-root-directory -n package_name -v package_version -r
+     Example:      $ autopypi your-package-root-directory -r
 
    Options:
-     -n, --name TEXT     Specify the package name.   [required]
-     -v, --version TEXT  Specify the package version number.   [required]
      -r, --real          Use the real PyPi index (instead of test PyPi).
      --help              Show this message and exit.
 
