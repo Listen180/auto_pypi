@@ -37,6 +37,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     is_flag=True,
     help="Use the real PyPi index (instead of test PyPi). ",
     required=False,
+    expose_value=False,
     prompt='Are you sure you want to use real PyPi index (instead of test PyPi)? '
 )
 #@click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
