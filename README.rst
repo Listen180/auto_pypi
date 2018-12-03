@@ -2,14 +2,16 @@ auto_pypi
 ===========
 
 
-|PyPI Version| |PyPI Platform| |PyPI License| |PyPI Doc|
+|PyPI Version| |PyPI Platform| |PyPI License| |PyPI Doc| 
 
+
+|Mac OS| |Ubuntu|
 
 
 This is a Python command line tool to automatically setup your (updated version) python package onto PyPi. 
 
 
-|Mac OS| |Ubuntu|
+
 
 
 
