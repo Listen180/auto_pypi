@@ -90,4 +90,4 @@ Usage
 
 .. |Mac OS| image:: https://img.shields.io/badge/Mac%20OS-green.svg?logo=apple&longCache=true&style=flat&logoColor=white
 
-.. |Ubuntu| image:: https://img.shields.io/badge/Linux-green.svg?logo=linux&longCache=true&style=flat&logoColor=white
+.. |Linux| image:: https://img.shields.io/badge/Linux-green.svg?logo=linux&longCache=true&style=flat&logoColor=white
