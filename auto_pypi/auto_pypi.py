@@ -84,13 +84,12 @@ else
     echo "  build folder not found. "
 fi
     """
-    #os.system("rm -r " + pkg_dir + "/dist/")
-    #os.system("rm -r " + pkg_dir + "/build/")
     os.system(command_script_rm)
 
     os.system("python3 -m pip install --user --upgrade setuptools wheel")
-    os.system("python3 setup.py sdist bdist_wheel")
     os.system("python3 -m pip install --user --upgrade twine")
+    print("\n")
+    os.system("python3 setup.py sdist bdist_wheel")
     print("\nChecking on the sdist and wheel ... (also check README rendering problem)")
     os.system("twine check " + pkg_dir + "/dist/*")
     print("\n")
@@ -99,7 +98,6 @@ fi
         #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
         print("Uploading to Real PyPi index ... ")
         command_script = 'twine upload --repository-url https://upload.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
-        print(f'command_script: {command_script}')
         os.system(command_script)
     else:
         #twine upload --repository-url https://test.pypi.org/legacy/ dist/*

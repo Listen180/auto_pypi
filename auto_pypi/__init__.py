@@ -47,7 +47,7 @@ class avatar(object):
                        Copyright 2018 Sen LEI 
                        All Rights Reserved
                 '''
-        print(info_org)
+        print(info)
         time.sleep(1)
 
     def type_2(self):
