@@ -9,6 +9,7 @@ auto_pypi
 This is a Python command line tool to automatically setup your (updated version) python package onto PyPi. 
 
 
+|Mac OS| |Ubuntu|
 
 
 
@@ -17,7 +18,7 @@ Usage
 -----
 
 
-- Just run ``autopypi`` in terminal, *providing your package's location* (current directory by default) and new version number later: 
+- Just run ``autopypi`` in terminal, providing *your package's location* and *new version number* later: 
 
 .. code-block:: shell
 
@@ -81,3 +82,10 @@ Usage
 
 .. |org_repo| image:: https://img.shields.io/badge/-repository-green.svg?logo=github&longCache=true&style=flat&logoColor=white
    :target: https://github.com/auto_pypi/
+
+
+
+
+.. |Mac OS| image:: https://img.shields.io/badge/Mac%20OS-green.svg?logo=apple&longCache=true&style=flat&logoColor=white
+
+.. |Ubuntu| image:: https://img.shields.io/badge/Ubuntu-green.svg?logo=ubuntu&longCache=true&style=flat&logoColor=white
