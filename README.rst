@@ -5,7 +5,7 @@ auto_pypi
 |PyPI Version| |PyPI Platform| |PyPI License| |PyPI Doc| 
 
 
-|Mac OS| |Ubuntu|
+|Mac OS| |Linux|
 
 
 This is a Python command line tool to automatically setup your (updated version) python package onto PyPi. 
@@ -90,4 +90,4 @@ Usage
 
 .. |Mac OS| image:: https://img.shields.io/badge/Mac%20OS-green.svg?logo=apple&longCache=true&style=flat&logoColor=white
 
-.. |Ubuntu| image:: https://img.shields.io/badge/Ubuntu-green.svg?logo=ubuntu&longCache=true&style=flat&logoColor=white
+.. |Ubuntu| image:: https://img.shields.io/badge/Linux-green.svg?logo=linux&longCache=true&style=flat&logoColor=white
