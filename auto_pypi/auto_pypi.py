@@ -29,7 +29,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     'pkg_version', '--version', '-v',
     help="Specify the package version number. ",
     required=True,
-    prompt=True,
+    prompt="Please specify (new) package version number ",
 )
 @click.option(
     'real_pypi', '--real', '-r',
@@ -37,7 +37,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     is_flag=True,
     help="Use the real PyPi index (instead of test PyPi). ",
     required=False,
-    prompt='Are you sure you want to use real PyPi index (instead of test PyPi)? '
+#    prompt='Are you sure you want to use real PyPi index (instead of test PyPi)? '
 )
 #@click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
 @click.argument(
