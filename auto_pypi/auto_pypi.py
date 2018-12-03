@@ -24,14 +24,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 @click.option(
     'pkg_name', '--name', '-n',
     help="Specify the package name. ",
-    required=True,
-    prompt="Please specify package name",
+    required=False,
+#    prompt="Please specify package name",
 )
 @click.option(
     'pkg_version', '--version', '-v',
     help="Specify the package version number. ",
-    required=True,
-    prompt="Please specify (new) package version number",
+    required=False,
+#    prompt="Please specify (new) package version number",
 )
 @click.option(
     'real_pypi', '--real', '-r',
@@ -47,7 +47,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     nargs=1, 
     type=click.Path(exists=True, file_okay=False, writable=True), 
     required=True, 
-    default='./',
+#    default='.',
 )
 def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     """
@@ -68,16 +68,23 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
     click.echo("")
 
-    if real_pypi:
-        command_script = "ls -l -a"
-        process = subprocess.Popen(command_script, shell=True, stdout=subprocess.PIPE)
-        process.wait()
-        print(command_script)
-        print(process.returncode)
+    os.system("python3 -m pip install --user --upgrade setuptools wheel")
+    os.system("python3 setup.py sdist bdist_wheel")
+    os.system("python3 -m pip install --user --upgrade twine")
+    print("\nChecking on the sdist and wheel ... (also check README rendering problem)")
+    os.system("twine check " + pkg_dir + "/dist/*")
+    print("\n")
 
-        command_script = HERE + '/setup_new_pypi.sh' + ' ' + pkg_name
-        subprocess.call(shlex.split(command_script))
+    if real_pypi:
         #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
+        print("Uploading to Real PyPi index ... ")
+        command_script = 'twine upload --repository-url https://upload.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        print(f'command_script: {command_script}')
+        os.system(command_script)
     else:
-        subprocess.Popen(["bash", "./setup_new_pypi.sh"])
         #twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+        #subprocess.Popen(["bash", "./setup_new_pypi.sh"])
+        print("Uploading to Test PyPi index ... ")
+        command_script = 'twine upload --repository-url https://test.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        print(f'command_script: {command_script}')
+        os.system(command_script)
