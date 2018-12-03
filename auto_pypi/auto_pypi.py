@@ -72,14 +72,14 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     command_script_rm = """
 if [ -d $dist_folder ]; then
     echo "  removing old dist folder ... "
-    rm -r $dist_folder
+    rm -r """ + pkg_dir + "/dist/" + """
 else
     echo "  dist folder not found. "
 fi
 
 if [ -d $build_folder ]; then
     echo "  removing old build folder ... "
-    rm -r $build_folder
+    rm -r """ + pkg_dir + "/build/" + """
 else
     echo "  build folder not found. "
 fi
