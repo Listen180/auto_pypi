@@ -13,7 +13,7 @@
 import sys
 import os
 import click
-
+import subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -56,12 +56,18 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     \t $ autopypi your-package-root-directory -n package_name -v package_version -r
     \t 
     """
+    if real_pypi:
+        click.echo("! Using REAL PyPi index ! ")
+    else:
+        click.echo("! Using TEST PyPi index ! ")
+
     click.echo('')
-    click.echo('Preparing package: {} - v{} ... '.format(pkg_name, pkg_version))
+    click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
     click.echo('')
 
     if real_pypi:
-        click.echo("  ! Using REAL PyPi index ! ")
+        subprocess.Popen(["bash", "./upload_to_pypi.sh"])
+        #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
     else:
-        click.echo("  ! Using TEST PyPi index ! ")
-
+        subprocess.Popen(["bash", "./setup_new_pypi.sh"])
+        #twine upload --repository-url https://test.pypi.org/legacy/ dist/*
