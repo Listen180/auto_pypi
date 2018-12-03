@@ -38,8 +38,15 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     help="Use the real PyPi index (instead of test PyPi). ",
     required=False,
 )
-@click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
-def main(pkg_dir='./', pkg_name, pkg_version, real_pypi):
+#@click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
+@click.argument(
+    'pkg_dir', 
+    nargs=1, 
+    type=click.Path(exists=True, file_okey=False, writable=True), 
+    required=True, 
+    default='./',
+)
+def main(pkg_dir=, pkg_name, pkg_version, real_pypi):
     """
     Python command line tool to setup Python package automatically. 
     \b
