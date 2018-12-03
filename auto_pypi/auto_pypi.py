@@ -23,11 +23,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     'pkg_name', '--name', '-n',
     help="Specify the package name. ",
     required=True,
+    prompt=True,
 )
 @click.option(
     'pkg_version', '--version', '-v',
     help="Specify the package version number. ",
     required=True,
+    prompt=True,
 )
 @click.option(
     'real_pypi', '--real', '-r',
@@ -37,7 +39,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     required=False,
 )
 @click.argument('pkg_dir', nargs=1, type=click.STRING, required=True)
-def main(pkg_dir, pkg_name, pkg_version, real_pypi):
+def main(pkg_dir='./', pkg_name, pkg_version, real_pypi):
     """
     Python command line tool to setup Python package automatically. 
     \b
