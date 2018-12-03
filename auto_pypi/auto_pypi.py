@@ -68,6 +68,26 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
     click.echo("")
 
+    ## Remove old folders for uploading
+    command_script_rm = """
+if [ -d $dist_folder ]; then
+    echo "  removing old dist folder ... "
+    rm -r $dist_folder
+else
+    echo "  dist folder not found. "
+fi
+
+if [ -d $build_folder ]; then
+    echo "  removing old build folder ... "
+    rm -r $build_folder
+else
+    echo "  build folder not found. "
+fi
+    """
+    #os.system("rm -r " + pkg_dir + "/dist/")
+    #os.system("rm -r " + pkg_dir + "/build/")
+    os.system(command_script_rm)
+
     os.system("python3 -m pip install --user --upgrade setuptools wheel")
     os.system("python3 setup.py sdist bdist_wheel")
     os.system("python3 -m pip install --user --upgrade twine")
