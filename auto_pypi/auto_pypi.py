@@ -23,19 +23,19 @@ HERE = os.path.dirname(os.path.abspath(__file__))
     'pkg_name', '--name', '-n',
     help="Specify the package name. ",
     required=True,
-    prompt=True,
+    prompt="Please specify package name",
 )
 @click.option(
     'pkg_version', '--version', '-v',
     help="Specify the package version number. ",
     required=True,
-    prompt="Please specify (new) package version number ",
+    prompt="Please specify (new) package version number",
 )
 @click.option(
     'real_pypi', '--real', '-r',
-#    default=False,
+    default=False,
     is_flag=True,
-    help="Use the real PyPi index (instead of test PyPi). ",
+    help="Use the real PyPi index (instead of test PyPi by default). ",
     required=False,
 #    prompt='Are you sure you want to use real PyPi index (instead of test PyPi)? '
 )
