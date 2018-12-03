@@ -106,5 +106,4 @@ fi
         #subprocess.Popen(["bash", "./setup_new_pypi.sh"])
         print("Uploading to Test PyPi index ... ")
         command_script = 'twine upload --repository-url https://test.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
-        print(f'command_script: {command_script}')
         os.system(command_script)
