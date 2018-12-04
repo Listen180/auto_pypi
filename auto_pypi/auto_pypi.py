@@ -88,6 +88,13 @@ fi
 
     os.system("python3 -m pip install --user --upgrade setuptools wheel")
     os.system("python3 -m pip install --user --upgrade twine")
+
+    ## Check if setup.py file exists
+    setup_file = pkg_dir + "/setup.py"
+    if not setup_file.is_file():
+        print("\n! <setup.py> file NOT found. Aborted !")
+    	os.system("exit")
+
     print("\n")
     os.system("python3 setup.py sdist bdist_wheel")
     print("\nChecking on the sdist and wheel ... (also check README rendering problem)")
