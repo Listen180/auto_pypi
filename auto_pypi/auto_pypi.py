@@ -93,7 +93,7 @@ fi
     setup_file = pkg_dir + "/setup.py"
     if not setup_file.is_file():
         print("\n! <setup.py> file NOT found. Aborted !")
-    	os.system("exit")
+        os.system("exit")
 
     print("\n")
     os.system("python3 setup.py sdist bdist_wheel")
