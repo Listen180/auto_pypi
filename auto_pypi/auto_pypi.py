@@ -15,10 +15,10 @@ import os
 import click
 import subprocess
 import shlex
-
+import platform
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-
+OS_TYPE = platform.platform().split('-')[0]
 
 @click.command()
 @click.option(
@@ -61,13 +61,30 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     if real_pypi:
         click.echo("")
         #click.echo("! Using REAL PyPi index ! ")
-        text_show = """echo "! Using \e[32m\e[5mREAL \e[39m\e[25mPyPi index ! " """
+        if OS_TYPE=='Darwin':
+            text_show = """echo "! Using \e[32mREAL \e[39mPyPi index ! " """
+            text_show_r = """echo "Uploading to \e[32mReal \e[39mPyPi index ... " """
+        elif OS_TYPE=='Linux':
+            text_show = """echo "! Using \e[32m\e[5mREAL \e[39m\e[25mPyPi index ! " """
+            text_show_r = """echo "Uploading to \e[32m\e[5mReal \e[39m\e[25mPyPi index ... " """
+        elif os_type == 'Windows':
+            text_show = """echo "! Using REAL PyPi index ! " """
+            text_show_r = """echo "Uploading to Real PyPi index ... " """
         os.system(text_show)
 
     else:
         click.echo("")
         #click.echo("! Using TEST PyPi index ! ")
-        text_show = """echo "! Using \e[32m\e[5mTEST \e[39m\e[25mPyPi index ! " """
+        if OS_TYPE=='Darwin':
+            text_show = """echo "! Using \e[32mTEST \e[39mPyPi index ! " """
+            text_show_t = """echo "Uploading to \e[32mTest \e[39mPyPi index ... " """
+        elif OS_TYPE=='Linux':
+            text_show = """echo "! Using \e[32m\e[5mTEST \e[39m\e[25mPyPi index ! " """
+            text_show_t = """echo "Uploading to \e[32m\e[5mTest \e[39m\e[25mPyPi index ... " """
+        elif os_type == 'Windows':
+            text_show = """echo "! Using TEST PyPi index ! " """
+            text_show_t = """echo "Uploading to Test PyPi index ... " """
+
         os.system(text_show)
 
     click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
@@ -113,15 +130,13 @@ fi
     if real_pypi:
         #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
         #print("Uploading to Real PyPi index ... ")
-        text_show = """echo "Uploading to \e[32m\e[5mReal \e[39m\e[25mPyPi index ... " """
-        os.system(text_show)
+        os.system(text_show_r)
         command_script = 'twine upload --repository-url https://upload.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
         os.system(command_script)
     else:
         #twine upload --repository-url https://test.pypi.org/legacy/ dist/*
         #subprocess.Popen(["bash", "./setup_new_pypi.sh"])
         #print("Uploading to Test PyPi index ... ")
-        text_show = """echo "Uploading to \e[32m\e[5mTest \e[39m\e[25mPyPi index ... " """
-        os.system(text_show)
+        os.system(text_show_t)
         command_script = 'twine upload --repository-url https://test.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
         os.system(command_script)
