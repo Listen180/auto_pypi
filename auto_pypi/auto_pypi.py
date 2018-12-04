@@ -60,10 +60,15 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     """
     if real_pypi:
         click.echo("")
-        click.echo("! Using REAL PyPi index ! ")
+        #click.echo("! Using REAL PyPi index ! ")
+        text_show = """echo -e "! Using \e[5mREAL \e[25mPyPi index ! " """
+        os.system(text_show)
+
     else:
         click.echo("")
-        click.echo("! Using TEST PyPi index ! ")
+        #click.echo("! Using TEST PyPi index ! ")
+        text_show = """echo -e "! Using \e[5mTEST \e[25mPyPi index ! " """
+        os.system(text_show)
 
     click.echo("  Setting up package: [{}]-v{} ".format(pkg_name, pkg_version))
     click.echo("")
@@ -95,7 +100,7 @@ fi
     if not is_file:
         print("\n")
         #raise FileNotFoundError("<setup.py> file NOT found. Aborted !")
-        print("<setup.py> file NOT found. Aborted !")
+        print("\u001b[35m<setup.py> file NOT found. Aborted !")
         #os.system("exit")
         sys.exit()
 
