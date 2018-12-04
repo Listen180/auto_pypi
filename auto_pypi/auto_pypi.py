@@ -91,7 +91,8 @@ fi
 
     ## Check if setup.py file exists
     setup_file = pkg_dir + "/setup.py"
-    if not setup_file.is_file():
+    is_file = os.path.isfile(setup_file)
+    if not is_file:
         print("\n! <setup.py> file NOT found. Aborted !")
         os.system("exit")
 
