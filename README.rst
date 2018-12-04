@@ -1,5 +1,5 @@
-auto_pypi
-===========
+Auto-PyPi Command Line Tool
+===========================
 
 
 |PyPI Version| |PyPI Platform| |PyPI License| |PyPI Doc| 
@@ -28,6 +28,8 @@ Usage
 
      Python command line tool to setup Python package automatically.  
      Example:      $ autopypi your-package-root-directory -r
+     Example:      $ cd your-package-root-directory
+                   $ autopypi . -r
 
    Options:
      -r, --real          Use the real PyPi index (instead of test PyPi).
