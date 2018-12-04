@@ -60,8 +60,8 @@ Usage
 .. |PyPI Platform| image:: https://img.shields.io/pypi/pyversions/auto_pypi.svg?logo=python&logoColor=white
    :target: https://pypi.python.org/pypi/auto_pypi
 
-.. |PyPI License| image:: https://img.shields.io/pypi/l/auto_pypi.svg
-   :target: https://opensource.org/licenses/BSD-3-Clause
+.. |PyPI License| image:: https://img.shields.io/github/license/Listen180/auto_pypi.svg
+   :target: https://github.com/Listen180/auto_pypi/blob/master/LICENSE
 
 .. |PyPI Version| image:: https://img.shields.io/pypi/v/auto_pypi.svg
    :target: https://pypi.python.org/pypi/auto_pypi
