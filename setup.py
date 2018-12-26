@@ -34,7 +34,7 @@ setuptools.setup(
     description="A Python command line tool to automatically setup and upload your package to PyPi. ",
     long_description=long_description,
     #long_description_content_type="text/markdown",
-    url="https://github.com/Dual-Points/dplearn",
+    url="https://github.com/Listen180/auto_pypi",
     packages=setuptools.find_packages(),
     license="BSD 3-clause",
     classifiers=[
