@@ -8,16 +8,44 @@ Auto-PyPi Command Line Tool
 |Mac OS| |Linux|
 
 
+
+
+Why Should I Use This?
+**********************
+
 This is a Python command line tool to automatically setup your (updated version) python package onto PyPi. 
 
+As you may know, PyPi indexes (both real and test index) do not allow you to reuse package name (considering version numner), which means you can not upload your package with the same package name together with an identical version numner. 
+
+In another word, you have to change the version number in your ``setup.py`` file before each time you want to upload your modified package. What's more, you also need to remove the old build and egg folder before you run the setup tools. 
+
+You'll find it not convenient at all if you are uploading and testing your package frequently. Even if you are not going to upload and test frequently, each time you remove the previous setup related folders comes with some risks and is still time-consuming. 
+
+By using this command line tool, you will be all set after a single command ``autopypi``. The only thing you need to care about now is the package version number. 
+
+You could chage the version number in the ``setup.py`` file as usual, but I highly recommend you to change a little bit in your ``setup.py`` file making the version number as an input value from the terminal: 
+
+.. code-block:: python
+
+   version_number = input("Input the new version number you are going to use: ")
+
+   setuptools.setup(
+       name="auto_pypi",
+       version=version_number,
+       author="Sen LEI",
+       ...)
 
 
-
+By doing this, you just need to run the command ``autopypi``, and specify a version number later when it pops up. 
 
 
 
 Usage
------
+*****
+
+
+Use As A Command Line Tool
+--------------------------
 
 
 - Just run ``autopypi`` in terminal, providing *your package's location* and *new version number* later: 
@@ -36,11 +64,15 @@ Usage
      --help              Show this message and exit.
 
 
-
 - Then you'll be asked to input the username and passcode of PyPi / Test-PyPi as usual. 
 
 
 
+
+Documentation
+*************
+
+Check out the latest ``auto_pypi`` documentation at `Read the Docs <https://auto_pypi.readthedocs.io/en/latest/>`_
 
 
 |
