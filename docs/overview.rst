@@ -25,15 +25,20 @@ By using this command line tool, you will be all set after a single command ``au
 You could chage the version number in the ``setup.py`` file as usual, but I highly recommend you to change a little bit in your ``setup.py`` file making the version number as an input value from the terminal: 
 
 .. code-block:: python
-    version_number = input("Input the new version number you are going to use: ")
 
-    setuptools.setup(
-        name="auto_pypi",
-        version=version_number,
-        author="Sen LEI",
-        ...)
+   version_number = input("Input the new version number you are going to use: ")
+
+   setuptools.setup(
+       name="auto_pypi",
+       version=version_number,
+       author="Sen LEI",
+       ...)
+
 
 By doing this, you just need to run the command ``autopypi``, and specify a version number later when it pops up. 
+
+
+
 
 
 Usage
