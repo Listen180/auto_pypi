@@ -36,6 +36,12 @@ setuptools.setup(
     #long_description_content_type="text/markdown",
     url="https://github.com/Listen180/auto_pypi",
     packages=setuptools.find_packages(),
+    install_requires=[
+        'click',
+        'subprocess',
+        'shlex',
+        'platform',
+    ],
     license="BSD 3-clause",
     classifiers=[
         "Development Status :: 3 - Alpha",
