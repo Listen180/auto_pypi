@@ -49,7 +49,7 @@ setuptools.setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
-    keywords='python package pypi shell',
+    keywords='python, package, pypi, shell',
     entry_points={'console_scripts': [
         'autopypi = auto_pypi.auto_pypi:main',
         ]},
