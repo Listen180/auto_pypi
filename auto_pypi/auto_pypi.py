@@ -1,4 +1,3 @@
-#!/Users/leisen/anaconda3/bin/python3
 # -*- coding: UTF-8 -*-
 
 # ********************************************************
@@ -61,13 +60,13 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     if real_pypi:
         click.echo("")
         #click.echo("! Using REAL PyPi index ! ")
-        if OS_TYPE=='Darwin':
+        if (OS_TYPE=='Darwin' or OS_TYPE=='macOS'):
             text_show = """echo "! Using \x1b[32;1mREAL \x1b[0mPyPi index ! " """
             text_show_r = """echo "Uploading to \x1b[32;1mReal \x1b[0mPyPi index ... " """
         elif OS_TYPE=='Linux':
             text_show = """echo "! Using \e[32m\e[5mREAL \e[39m\e[25mPyPi index ! " """
             text_show_r = """echo "Uploading to \e[32m\e[5mReal \e[39m\e[25mPyPi index ... " """
-        elif os_type == 'Windows':
+        elif OS_TYPE == 'Windows':
             text_show = """echo "! Using REAL PyPi index ! " """
             text_show_r = """echo "Uploading to Real PyPi index ... " """
         os.system(text_show)
@@ -75,13 +74,13 @@ def main(pkg_dir, pkg_name, pkg_version, real_pypi):
     else:
         click.echo("")
         #click.echo("! Using TEST PyPi index ! ")
-        if OS_TYPE=='Darwin':
+        if (OS_TYPE=='Darwin' or OS_TYPE=='macOS'):
             text_show = """echo "! Using \x1b[32;1mTEST \x1b[0mPyPi index ! " """
             text_show_t = """echo "Uploading to \x1b[32;1mTest \x1b[0mPyPi index ... " """
         elif OS_TYPE=='Linux':
             text_show = """echo "! Using \e[32m\e[5mTEST \e[39m\e[25mPyPi index ! " """
             text_show_t = """echo "Uploading to \e[32m\e[5mTest \e[39m\e[25mPyPi index ... " """
-        elif os_type == 'Windows':
+        elif OS_TYPE == 'Windows':
             text_show = """echo "! Using TEST PyPi index ! " """
             text_show_t = """echo "Uploading to Test PyPi index ... " """
 
