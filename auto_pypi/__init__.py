@@ -25,12 +25,12 @@ class avatar(object):
             self.type_3()
 
     def _judge(self):
-        os_type = platform.platform().split('-')[0]
-        if os_type == 'Darwin':
+        OS_TYPE = platform.platform().split('-')[0]
+        if OS_TYPE == 'Darwin':
             self.n = 1
-        elif os_type == 'Linux':
+        elif OS_TYPE == 'Linux':
             self.n = 2
-        elif os_type == 'Windows':
+        elif OS_TYPE == 'Windows':
             self.n = 3
         else:
             self.n = 2
@@ -44,7 +44,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                       Copyright 2018 Sen LEI 
+                    Copyright 2018-2021 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)
@@ -59,7 +59,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                       Copyright 2018 Sen LEI 
+                    Copyright 2018-2021 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)
@@ -74,7 +74,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                       Copyright 2018 Sen LEI 
+                    Copyright 2018-2021 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)
