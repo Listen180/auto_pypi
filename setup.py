@@ -27,7 +27,7 @@ with codecs.open('README.rst' ,'r') as f:
 
 setuptools.setup(
 #setup(
-    name="autopip",
+    name="auto-pypi-setup",
     version=version_number,
     author="Sen LEI",
     author_email="sen.lei@outlook.com",
@@ -48,6 +48,6 @@ setuptools.setup(
     ],
     keywords='python, package, pypi, shell, pip, clt, cli, tools, auto',
     entry_points={'console_scripts': [
-        'autopip = autopip.autopip:main',
+        'autopypi = autopypi.autopypi:main',
         ]},
 )
