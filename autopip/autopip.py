@@ -106,8 +106,8 @@ else
 fi
     """
     os.system(command_script_rm)
-
-    os.system("python3 -m pip install --user --upgrade setuptools wheel")
+    os.system("python3 -m pip install --user --upgrade pip setuptools wheel")
+    os.system("python3 -m pip install --user --upgrade build")
     os.system("python3 -m pip install --user --upgrade twine")
 
     ## Check if setup.py file exists
@@ -130,12 +130,15 @@ fi
         #twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
         #print("Uploading to Real PyPi index ... ")
         os.system(text_show_r)
-        command_script = 'twine upload --repository-url https://upload.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        # command_script = 'twine upload --repository-url https://upload.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        command_script = 'twine upload --repository pypi' + ' ' + pkg_dir + '/dist/*'
         os.system(command_script)
     else:
         #twine upload --repository-url https://test.pypi.org/legacy/ dist/*
         #subprocess.Popen(["bash", "./setup_new_pypi.sh"])
         #print("Uploading to Test PyPi index ... ")
         os.system(text_show_t)
-        command_script = 'twine upload --repository-url https://test.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        # command_script = 'twine upload --repository-url https://test.pypi.org/legacy/' + ' ' + pkg_dir + '/dist/*'
+        command_script = 'twine upload --repository testpypi' + ' ' + pkg_dir + '/dist/*'
+
         os.system(command_script)

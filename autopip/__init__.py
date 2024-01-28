@@ -44,7 +44,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                    Copyright 2018-2021 Sen LEI 
+                    Copyright 2018-2024 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)
@@ -59,7 +59,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                    Copyright 2018-2021 Sen LEI 
+                    Copyright 2018-2024 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)
@@ -74,7 +74,7 @@ class avatar(object):
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║        ██║   ██║     ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝        ╚═╝   ╚═╝     ╚═╝
 
-                    Copyright 2018-2021 Sen LEI 
+                    Copyright 2018-2024 Sen LEI 
                        All Rights Reserved
                 '''
         print(info)

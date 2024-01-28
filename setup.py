@@ -27,14 +27,14 @@ with codecs.open('README.rst' ,'r') as f:
 
 setuptools.setup(
 #setup(
-    name="auto_pypi",
+    name="autopip",
     version=version_number,
     author="Sen LEI",
     author_email="sen.lei@outlook.com",
     description="A Python command line tool to automatically setup and upload your package to PyPi. ",
     long_description=long_description,
-    #long_description_content_type="text/markdown",
-    url="https://github.com/Listen180/auto_pypi",
+    long_description_content_type='text/x-rst',
+    url="https://github.com/Listen180/autopip",
     packages=setuptools.find_packages(),
     install_requires=[
         'click',
@@ -46,8 +46,8 @@ setuptools.setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
-    keywords='python, package, pypi, shell',
+    keywords='python, package, pypi, shell, pip, clt, cli, tools, auto',
     entry_points={'console_scripts': [
-        'autopypi = auto_pypi.auto_pypi:main',
+        'autopip = autopip.autopip:main',
         ]},
 )
